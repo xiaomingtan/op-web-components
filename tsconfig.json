@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "target": "esnext",
     "allowJs": true,
-    "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -17,6 +16,7 @@
     "lib": ["esnext", "dom"],
     "noImplicitAny": false,
     "skipLibCheck": true,
+    "useDefineForClassFields": false,
     "experimentalDecorators": true,
     "paths": {
       "@/*": ["src/*"],
