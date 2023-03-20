@@ -5,10 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .op-button {
+        background-color: red !important;
+      }
+    </style>
   </head>
   <body>
-    <my-header></my-header>
-    <op-button></op-button>
+    <!-- <my-header></my-header> -->
+    <ul>
+      Buttons
+      <li>
+        <op-button id="btn" size="sm">small button</op-button>
+        <op-button size="md">medium button</op-button>
+        <op-button size="lg">large button</op-button>
+        <op-button disabled>disabled button</op-button>
+        <op-button border>border button</op-button>
+        <op-button disabled border>disabled border button</op-button>
+        <op-button block>block button</op-button>
+      </li>
+    </ul>
+    <script>
+      document.getElementById('btn').onclick = function (e) {
+        alert(e);
+      };
+    </script>
     <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>

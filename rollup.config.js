@@ -1,5 +1,6 @@
 import { terser } from 'rollup-plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import alias from '@rollup/plugin-alias';
 import typescript from '@rollup/plugin-typescript';
 // import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
@@ -7,6 +8,14 @@ import fs from 'fs';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import { genHostCss } from './src/variable/theme.ts';
+import path from 'path';
+
+const projectRootDir = path.resolve(__dirname);
+
+const customResolver = nodeResolve({
+  extensions: ['.js', '.ts', '.json', '.css']
+});
+
 function cssHandler() {
   return {
     name: 'my-example', // 名字用来展示在警告和报错中
@@ -36,6 +45,15 @@ export default [
     },
 
     plugins: [
+      alias({
+        entries: [
+          {
+            find: '@',
+            replacement: path.resolve(projectRootDir, 'src')
+          }
+        ],
+        customResolver
+      }),
       commonjs(),
       typescript(),
       nodeResolve(),
