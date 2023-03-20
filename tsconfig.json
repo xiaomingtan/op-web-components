@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "target": "esnext",
+      "allowJs": true,
+      "useDefineForClassFields": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "preserve",
+      "sourceMap": false,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "types": [],
+      "typeRoots": ["./types"],
+      "lib": ["esnext", "dom"],
+      "noImplicitAny": false,
+      "skipLibCheck": true,
+      "experimentalDecorators": true
+    },
+    "include": [
+      "types/**/*.ts",
+      "src/components/**/*.ts"
+, "src/main.ts"    ],
+    "exclude": ["node_modules", "dist", "**/*.js"]
+  }
+  
