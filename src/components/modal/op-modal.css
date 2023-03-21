@@ -1,0 +1,87 @@
+.op-modal-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.op-modal-content {
+  position: absolute;
+  position: fixed;
+  max-height: 100%;
+  overflow-y: auto;
+  display: none;
+}
+
+.center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  left: 0;
+  top: 0;
+}
+
+.right {
+  right: 0;
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+  left: 0;
+}
+
+.show {
+  display: block;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.body {
+  width: 398px;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  background-color: #fff;
+}
+
+.title {
+  color: var(--text-title-color);
+  font-weight: var(--font-bold);
+  font-size: var(--font-lg);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.desc {
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--text-content-color);
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel {
+  margin-right: 5px;
+}
+
+.confirm {
+  margin-left: 5px;
+}

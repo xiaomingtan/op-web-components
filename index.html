@@ -14,8 +14,8 @@
   <body>
     <!-- <my-header></my-header> -->
     <ul>
-      Buttons
       <li>
+        <p>Buttons:</p>
         <op-button id="btn" size="sm">small button</op-button>
         <op-button size="md">medium button</op-button>
         <op-button size="lg">large button</op-button>
@@ -24,10 +24,30 @@
         <op-button disabled border>disabled border button</op-button>
         <op-button block>block button</op-button>
       </li>
+      <li>
+        <p>Modal</p>
+        <op-modal
+          id="modal"
+          title="Your account has expired, please log in again"
+          desc="Please go to the mobile APP to check the printer configuration"
+        ></op-modal>
+        <op-button id="btn-modal">toggle modal</op-button>
+      </li>
     </ul>
     <script>
-      document.getElementById('btn').onclick = function (e) {
-        alert(e);
+      window.onload = function () {
+        document.getElementById('btn-modal').onclick = function () {
+          const modal = document.getElementById('modal');
+          const show = modal.getAttribute('show') !== null;
+          if (show) {
+            modal.removeAttribute('show');
+          } else {
+            modal.setAttribute('show', '');
+          }
+          modal.addEventListener('confirm', () => {
+            alert('confirm');
+          });
+        };
       };
     </script>
     <script type="module" src="./dist/bundle.js"></script>

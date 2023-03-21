@@ -2,7 +2,6 @@ import { terser } from 'rollup-plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import alias from '@rollup/plugin-alias';
 import typescript from '@rollup/plugin-typescript';
-// import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import fs from 'fs';
 import serve from 'rollup-plugin-serve';
@@ -18,7 +17,7 @@ const customResolver = nodeResolve({
 
 function cssHandler() {
   return {
-    name: 'my-example', // 名字用来展示在警告和报错中
+    name: 'css-handler', // 名字用来展示在警告和报错中
     resolveId(source) {
       if (source === 'virtual-module') {
         return source; // rollup 不应该查询其他插件或文件系统

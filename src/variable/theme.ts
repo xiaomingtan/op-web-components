@@ -11,6 +11,12 @@ export const themeConfig = {
   '--text-title-color': '#28282C',
   '--text-content-color': '#5A5E68',
 
+  // 字重
+  '--font-normal': 400,
+  '--font-medium': 500,
+  '--font-semi-bold': 600,
+  '--font-bold': 700,
+
   // 字体大小
   '--font-xs': '12px',
   '--font-sm': '14px',
@@ -21,7 +27,8 @@ export const themeConfig = {
   '--font-3xl': '28px',
 
   // 圆角
-  '--radius-sm': '4px'
+  '--radius-sm': '4px',
+  '--radius-md': '8px'
 };
 
 export function genHostCss() {
@@ -29,7 +36,7 @@ export function genHostCss() {
   for (const key in themeConfig) {
     hostCss += `${key}:${themeConfig[key]};`;
   }
-
+  hostCss += `box-sizing: border-box;font-size:${themeConfig['--font-base']};font-weight: ${themeConfig['--font-normal']}`;
   return `
     :host {
       ${hostCss}

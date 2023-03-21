@@ -1,7 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import stylesheet from './op-button.css';
-import { genClassNamesFromObj } from '@/utils/classUtil';
+import { genClassNamesFromObj } from '@/utils/dom-util';
 
 type ButtonSize = 'sm' | 'md' | 'lg';
 
