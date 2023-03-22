@@ -36,18 +36,18 @@
     </ul>
     <script>
       window.onload = function () {
+        const modal = document.getElementById('modal');
         document.getElementById('btn-modal').onclick = function () {
-          const modal = document.getElementById('modal');
           const show = modal.getAttribute('show') !== null;
           if (show) {
             modal.removeAttribute('show');
           } else {
             modal.setAttribute('show', '');
           }
-          modal.addEventListener('confirm', () => {
-            alert('confirm');
-          });
         };
+        modal.addEventListener('confirm', () => {
+          alert('confirm');
+        });
       };
     </script>
     <script type="module" src="./dist/bundle.js"></script>
